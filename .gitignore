@@ -1,0 +1,13 @@
+.idea/
+target/
+.server/
+.project
+.classpath
+.settings
+.metadata
+*.pyc
+venv/
+maven1/target/
+maven2/target/
+maven3/target/
+.idea/
