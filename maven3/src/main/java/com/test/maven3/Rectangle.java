@@ -15,6 +15,16 @@ public class Rectangle extends Abstract implements Interface, Interface2 {
         System.out.println("say hello");
         System.out.print(Enum1.fdsafd.reason);
         this.isSort = true;
+//
+//        try {
+//            <可能引发异常的块 >
+//        } catch (<java.lang.Exception或子类 > e){
+//            <处理异常e的代码 >
+//        }
+//        finally{
+//            <有异常或无异常情况下都执行的语句 >
+//        }
+
 
     }
 
