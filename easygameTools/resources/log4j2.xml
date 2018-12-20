@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="logPath">out/logs/</Property>
+        <Property name="fileName">easygameTools</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d][%p] %C{2} (%F:%L) %m%n"/>
+        </Console>
+        <RollingFile name="file-log" fileName="${logPath}/${fileName}.log"
+                     filePattern="${logPath}/${fileName}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100 kB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        <RollingFile name="file-err" fileName="${logPath}/${fileName}-err.log"
+                     filePattern="${logPath}/${fileName}-err-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100 KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache.ibatis" level="error" />
+        <Logger name="com.easygo.db.dao" level="error" />
+        <Logger name="org.quartz" level="error" />
+
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="file-log"/>
+            <AppenderRef ref="file-err" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>

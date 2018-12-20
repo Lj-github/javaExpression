@@ -1,0 +1,12 @@
+[
+  {
+    "mainCode": 0,
+    "messageDefines": [
+      {
+        "name": "com.easygo.net.message.PostS2SGameMessage",
+        "code": 0,
+        "time": 1
+      }
+    ]
+  }
+]

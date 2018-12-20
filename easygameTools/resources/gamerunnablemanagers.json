@@ -1,0 +1,6 @@
+[
+    "com.easygo.service.localize.LocalizeGameManager",
+    "com.easygo.core.player.GamePlayerManager",
+    "com.easygo.core.runnable.VersionGameManager",
+    "com.easygo.core.runnable.GroovyClassLoaderManager"
+]
